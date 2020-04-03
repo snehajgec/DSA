@@ -6,14 +6,17 @@ public class WordBreakProblem {
 		
 		List<String> dictionary = new ArrayList<String>();
 		
-        String temp_dictionary[] = {"cats", "dog", "sand", "and", "cat"}; 
+        String temp_dictionary[] = {"he", "hell", "hello", "I", "there", "the","hope", "you", "are"
+        		,"are","having", "a", "nice", "day"}; 
         
         for(String st: temp_dictionary){
             dictionary.add(st);
         }                      
+        
+        String word = "hellothereIhopeyouarehavinganiceday";
                               
-        System.out.println(wordBreak("catsanddog", dictionary)); 
-        System.out.println(wordBreak("catsandog", dictionary)); 
+        System.out.println(wordBreak(word, dictionary)); 
+//        System.out.println(wordBreak("catsandog", dictionary)); 
 
 	}
 	public static boolean wordBreak(String s, List<String> wordDict) {
@@ -22,7 +25,7 @@ public class WordBreakProblem {
         }
         for(int i = 1; i <= s.length(); i++){
             if(wordDict.contains(s.substring(0,i)) && wordBreak(s.substring(i, s.length()),wordDict)){
-                return true;
+            	return true;
             }
         }
         return false;
