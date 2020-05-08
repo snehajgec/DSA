@@ -27,10 +27,11 @@ public class DFS {
 				
 		while(!stack.isEmpty()) {
 			int element = stack.peek();
+			stack.pop();
 			
 			if(!vis[element]) {
-				vis[element] = true;
 				System.out.println(element);
+				vis[element] = true;
 			}
 			
 			adj[element].forEach(temp->{
@@ -38,7 +39,7 @@ public class DFS {
 					stack.push(temp);
 				}
 			});
-			stack.pop();			
+						
 		}
 		
 	}
